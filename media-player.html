@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<title> My Video for NetcoSport</title>
+		<link href='media-player.css' rel='stylesheet' />
+		<script src='media-player.js'></script>
+
+		<script>
+  function show(id) {
+    document.getElementById(id).style.visibility = "visible";
+  }
+  function hide(id) {
+    document.getElementById(id).style.visibility = "hidden";
+  }
+</script>
+	</head>
+<body>
+	<h1>My Video for NetcoSport</h1>
+	<div id='media-player'>
+		<video id='media-video' controls>
+			<source src='https://s3-eu-west-1.amazonaws.com/onrewind-test-bucket/big_buck_bunny.mp4' type='video/mp4'>
+			 
+		</video>
+		<div onMouseOver="show('media-controls')" onMouseOut="hide('media-controls')">
+		<div id='media-controls'  >
+			<progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+			<button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>	
+			<button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
+			<button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
+			<button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
+			<button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
+			<button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>	
+		</div>
+		 </div>
+	</div>	
+</body>
+</html>
